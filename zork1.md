@@ -32,5 +32,9 @@ Lebling.
 The setting is in the ruins of an ancient underground empire, where
 you the adventurer is to return alive with six treasures.
 
-To stop playing and exit this game, type **quit**
+To stop playing and exit this game, type
+
+```
+**quit**
+```
 

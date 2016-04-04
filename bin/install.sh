@@ -3,10 +3,10 @@ apt-get install dialog
 apt-get install fizmo-console
 apt-get install figlet
 apt-get install nethack-console
+apt-get install telnet # lambda moo
 
 # slacker
 apt-get install php5-cli
-apt-get install telnet
 
 exit
 

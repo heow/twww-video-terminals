@@ -37,4 +37,3 @@ To stop playing and exit this game, type
 ```
 **quit**
 ```
-

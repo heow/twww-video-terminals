@@ -11,6 +11,12 @@ and of course the bots and people lurking about.
 
 The setting is the house, you start in the coat closet.
 
+To login to LambdaMOO, type
+
+```
+connect guest
+```
+
 To stop playing and exit this game, type
 
 ```

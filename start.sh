@@ -9,21 +9,30 @@ result=$(dialog --title " Video Terminals 1973-1993 " \
 3 "Lambda Moo: the original MMOG" \
 4 "Exit from this menu to the console"  2>&1 >/dev/tty )
 
-case $result in
+case ${result} in
     1)
-        dialog --textbox ./zork1.md ${textsize}
-        clear
-        fizmo-console ~/zork1.z5
+        dialog --exit-label "OK" --textbox ./zork1.md ${textsize}
+        dialog --yesno "Play Zork?" 0 0
+        if [ "0" -eq "$?" ]; then
+            clear
+            fizmo-console ./media/zork1.z5
+        fi
         ;;
     2)
-        clear
-        dialog --textbox ./nethack.md ${textsize}
-        nethack
+        dialog --exit-label "OK" --textbox ./nethack.md ${textsize}
+        dialog --yesno "Play Nethack?" 0 0
+        if [ "0" -eq "$?" ]; then
+            clear
+            nethack
+        fi
         ;;
     3)
-	dialog --textbox ./lambdamoo.md  ${textsize}
-        clear
-        telnet lambda.moo.mud.org 8888
+	dialog --exit-label "OK" --textbox ./lambdamoo.md  ${textsize}
+        dialog --yesno "Login to LambdaMOO?" 0 0
+        if [ "0" -eq "$?" ]; then
+            clear
+            telnet lambda.moo.mud.org 8888
+        fi
         ;;
     *)
         figlet "thanks"

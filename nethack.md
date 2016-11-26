@@ -16,6 +16,10 @@ Basic keys:
  
   W weild weapon  
   ? help  
-  #quit quit  
  ```
 
+To quit this game, type
+
+```
+  #quit quit  
+```

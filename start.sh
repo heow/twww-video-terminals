@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# current working directory of this script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 function everything {
 textsize="22 78"
 
@@ -12,7 +15,7 @@ result=$(dialog --nocancel --title " Video Terminals 1973-1993 " \
 
 case ${result} in
     1)
-        dialog --exit-label "OK" --textbox ./zork1.md ${textsize}
+        dialog --exit-label "OK" --textbox ${DIR}/zork1.md ${textsize}
         dialog --yesno "Play Zork?" 0 0
         if [ "0" -eq "$?" ]; then
             clear
@@ -20,7 +23,7 @@ case ${result} in
         fi
         ;;
     2)
-        dialog --exit-label "OK" --textbox ./nethack.md ${textsize}
+        dialog --exit-label "OK" --textbox ${DIR}/nethack.md ${textsize}
         dialog --yesno "Play Nethack?" 0 0
         if [ "0" -eq "$?" ]; then
             clear
@@ -28,7 +31,7 @@ case ${result} in
         fi
         ;;
     3)
-	dialog --exit-label "OK" --textbox ./lambdamoo.md  ${textsize}
+	dialog --exit-label "OK" --textbox ${DIR}/lambdamoo.md  ${textsize}
         dialog --yesno "Login to LambdaMOO?" 0 0
         if [ "0" -eq "$?" ]; then
             clear
@@ -36,7 +39,7 @@ case ${result} in
         fi
         ;;
     4)
-	dialog --exit-label "OK" --textbox ./slack.md  ${textsize}
+	dialog --exit-label "OK" --textbox ${DIR}/slack.md  ${textsize}
         dialog --yesno "Login to Makelab's group chat Slack?" 0 0
         if [ "0" -eq "$?" ]; then
             clear

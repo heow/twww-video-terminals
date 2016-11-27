@@ -3,7 +3,7 @@
 function everything {
 textsize="22 78"
 
-result=$(dialog --title " Video Terminals 1973-1993 " \
+result=$(dialog --nocancel --title " Video Terminals 1973-1993 " \
 --menu "" 15 70 7 \
 1 "Interactive Fiction Game: Zork" \
 2 "ASCII Adventure: Nethack" \

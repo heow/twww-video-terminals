@@ -1,5 +1,6 @@
 #!/bin/bash
 
+function everything {
 textsize="22 78"
 
 result=$(dialog --title " Video Terminals 1973-1993 " \
@@ -7,8 +8,7 @@ result=$(dialog --title " Video Terminals 1973-1993 " \
 1 "Interactive Fiction Game: Zork" \
 2 "ASCII Adventure: Nethack" \
 3 "Lambda Moo: the original MMOG" \
-4 "Slack the group messaging app" \
-5 "Exit from this menu to the console"  2>&1 >/dev/tty )
+4 "Slack the group messaging app" 2>&1 >/dev/tty )
 
 case ${result} in
     1)
@@ -45,9 +45,9 @@ case ${result} in
         ;;
     *)
         figlet "thanks"
-        exit
+        sleep 2
         ;;
 esac
+}
 
-# rurun
-./start.sh
+while true; do everything; done

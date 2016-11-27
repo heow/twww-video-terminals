@@ -7,7 +7,8 @@ result=$(dialog --title " Video Terminals 1973-1993 " \
 1 "Interactive Fiction Game: Zork" \
 2 "ASCII Adventure: Nethack" \
 3 "Lambda Moo: the original MMOG" \
-4 "Exit from this menu to the console"  2>&1 >/dev/tty )
+4 "Slack the group messaging app" \
+5 "Exit from this menu to the console"  2>&1 >/dev/tty )
 
 case ${result} in
     1)
@@ -32,6 +33,14 @@ case ${result} in
         if [ "0" -eq "$?" ]; then
             clear
             telnet lambda.moo.mud.org 8888
+        fi
+        ;;
+    4)
+	dialog --exit-label "OK" --textbox ./slack.md  ${textsize}
+        dialog --yesno "Login to Makelab's group chat Slack?" 0 0
+        if [ "0" -eq "$?" ]; then
+            clear
+            /usr/local/bin/slacker
         fi
         ;;
     *)

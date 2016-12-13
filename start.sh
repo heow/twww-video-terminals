@@ -14,7 +14,7 @@ result=$(dialog --nocancel --title " Video Terminals 1973-1993 " \
 4 "ASCII Adventure: Nethack" \
 5 "Lambda Moo: the original MMOG" \
 6 "Slack the group messaging app" \
-7 "Star Wars the ASCII Movie" \
+7 "Animations" \
  2>&1 >/dev/tty )
 
 case ${result} in
@@ -54,7 +54,7 @@ case ${result} in
         fi
         ;;
     6)
-	    dialog --exit-label "OK" --textbox ${DIR}/slack.md  ${textsize}
+	dialog --exit-label "OK" --textbox ${DIR}/slack.md  ${textsize}
         dialog --yesno "Login to Makelab's group chat Slack?" 0 0
         if [ "0" -eq "$?" ]; then
             clear
@@ -62,11 +62,12 @@ case ${result} in
         fi
         ;;
     7)
-        dialog --yesno "Watch Star Wars?" 0 0
-        if [ "0" -eq "$?" ]; then
-            clear
-            telnet towel.blinkenlights.nl
-        fi
+        clear
+	cat ${DIR}/media/snowing.vt; sleep 2; clear
+	cat ${DIR}/media/xmas-00.vt; sleep 2; clear
+	cat ${DIR}/media/xmas-04.vt; sleep 2; clear
+	cat ${DIR}/media/xmas-05.vt; sleep 2; clear
+	cat ${DIR}/media/xmas-06.vt; sleep 2; clear
         ;;
     *)
         figlet "thanks"
